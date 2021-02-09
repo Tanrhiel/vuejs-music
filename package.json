@@ -9,16 +9,21 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "fontawesome": "^5.6.3",
     "vue": "^3.0.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
+    "autoprefixer": "^10.2.4",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0-0"
+    "eslint-plugin-vue": "^7.0.0-0",
+    "postcss": "^8.2.5",
+    "tailwindcss": "^2.0.3"
   },
   "eslintConfig": {
     "root": true,
@@ -33,6 +38,12 @@
       "parser": "babel-eslint"
     },
     "rules": {}
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
   },
   "browserslist": [
     "> 1%",
