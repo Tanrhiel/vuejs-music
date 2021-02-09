@@ -1,18 +1,18 @@
 <template>
-  <div class="xl:flex max-w-md mx-auto rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+  <div class="xl:flex max-w-md mx-auto rounded-xl shadow-2xl p-5 overflow-hidden md:max-w-2xl">
     <div class="md:flex">
       <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-        <div class="md:flex-1 m-2">
-          <div class="md:flex-shrink-0">
+        <div class="md:flex-1">
+          <div class="md:flex-shrink-0 items-center">
             <img class="h-48 w-full object-cover md:w-48" v-bind:src="current.image" alt="Album">
           </div>
           <div class="p-8">
-            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{ current.title }} <span>{{ current.artist }}</span></div>
-            <div class="flex">
-                  <button class="flex-auto" @click="prev"> <i class="fas fa-arrow-circle-left md:text-green-600" ></i> </button>
-                  <button class="flex-auto" v-if="!isPlaying" @click="play"> <i class="fas fa-play-circle md:text-green-600"></i> </button>
-                  <button class="flex-auto" v-else @click="pause" > <i class="fas fa-pause-circle md:text-green-600"></i> </button>
-                  <button class="flex-auto" @click="next"> <i class="fas fa-arrow-circle-right md:text-green-600"></i> </button>
+            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{ current.title }} - <span class="md:text-sm">{{ current.artist }}</span></div>
+            <div class="flex mt-4">
+                  <button class="flex-auto" @click="prev"> <i class="fas fa-arrow-circle-left text-blue-500" ></i> </button>
+                  <button class="flex-auto" v-if="!isPlaying" @click="play"> <i class="fas fa-play-circle text-blue-500"></i> </button>
+                  <button class="flex-auto" v-else @click="pause" > <i class="fas fa-pause-circle text-blue-500"></i> </button>
+                  <button class="flex-auto" @click="next"> <i class="fas fa-arrow-circle-right text-blue-500"></i> </button>
                 </div>
           </div>
         </div>
@@ -22,11 +22,11 @@
 
     <div class="flex-1 m-2">
       <div class="md: p-6 max-w-xl mx-auto bg-white rounded-xl shadow-md items-center space-x-4">
-        <div>
-          <h2 class="text-green-600 sm:font-semibold text-8x1 md:font-bold">PlayList</h2>
+        <div class="flex-col">
+          <h2 class="text-blue-500 sm:font-semibold text-8x1 md:font-bold">PlayList</h2>
           <hr class="m-2">
         </div>
-        <div class="items-left">
+        <div class="flex flex-col">
           <button  v-for="song in songs" :key="song.src" @click="play(song)" :class="(song.src == current.src) ? 'song playing':'song'">
             {{ song.title }} - <span>{{ song.artist }}</span>
           </button>            
@@ -104,7 +104,7 @@ export default {
 
 <style>
 body{
-  background: linear-gradient(90deg, rgba(97,84,254,1) 0%, rgba(82,182,254,1) 100%);
+  background: linear-gradient(90deg, rgba(97,84,254,0.906582701439951) 0%, rgba(82,182,254,0.9401961468181023)  100%);
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
